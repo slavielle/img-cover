@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>image-cover</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css" media="all">
+    <script src="dist/js/bundle.js"></script>
+    <script src="dist/js/scripts.js"></script>
+
+</head>
+<body>
+<h1>Image-cover</h1>
+<h2>Original image</h2>
+<div class="examples">
+    <img class="original-image" src="images/img_01.jpg">
+</div>
+
+
+<h2>Image-cover in action ...</h2>
+<p>resize window to see the cover in action ...</p>
+<div class="row">
+    <div class="col-1">&nbsp;</div>
+    <div class="col-2 col-padding grey-bg">Cover using object-fit CSS property ... Great but not supported by IE11</div>
+    <div class="col-3 col-padding grey-bg">Cover using js and background ... Great workaround for the same result fully compatible with IE11</div>
+</div>
+<div class="row">
+    <div class="col-1 col-padding grey-bg">
+        Cover using a defined width and height values
+    </div>
+    <div class="col-2">
+        <img class="img-cover-1" src="images/img_01.jpg">
+    </div>
+    <div class="col-3">
+        <div class="img-cover-1-b img-cover img-cover--hover-zoom-effect">
+            <img src="images/img_01.jpg">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-1 col-padding grey-bg">
+        Cover-image using defined width and keeping a 3:4 with/height ratio
+    </div>
+    <div class="col-2">
+        <div class="img-cover-2">
+            <img src="images/img_01.jpg">
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="img-cover-2-b img-cover">
+            <img src="images/img_01.jpg">
+        </div>
+    </div>
+</div>
+
+<h2>Advanced stuff</h2>
+<p>Image-cover workaround allows to be easily impoved with some cool stuff</p>
+<div>
+    <h3>lazy loading</h3>
+    <p>Cover-image lazy loading using <a href="https://github.com/verlok/lazyload">verlok
+        / lazyload</a> (when you scroll down the image after page loaded, the picture is lazy loaded and appears with a
+        fade in effect) </p>
+    <div>
+        <div class="img-cover-fx-example img-cover img-cover--fx-load-fadein">
+            <div class="img-cover__inner">
+                <img data-src="images/img_01.jpg">
+            </div>
+        </div>
+    </div>
+
+    <h3>Hover effect</h3>
+    <p>Cover-image with a zoom effect on hover</p>
+    <div>
+        <div class="img-cover-fx-example img-cover img-cover--fx-hover-zoom">
+            <div class="img-cover__inner">
+                <img data-src="images/img_01.jpg">
+            </div>
+        </div>
+    </div>
+
+    <h3>With text</h3>
+    <p>Cover-image with some text</p>
+    <div>
+        <div class="img-cover-fx-example img-cover">
+            <div class="img-cover__inner">
+                <img data-src="images/img_01.jpg">
+            </div>
+            <div class="img-cover__content">
+                <h2>Hollidays ...</h2>
+                <p>What a great moment</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>All together</h3>
+    <p>Cover-image with all previous stuff together</p>
+    <div>
+        <div class="img-cover-fx-example img-cover img-cover--fx-hover-zoom img-cover--fx-load-fadein">
+            <div class="img-cover__inner">
+                <img data-src="images/img_01.jpg">
+            </div>
+            <div class="img-cover__content">
+                <h2>Hollidays ...</h2>
+                <p>What a great moment</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

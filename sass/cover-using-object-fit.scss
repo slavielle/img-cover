@@ -1,0 +1,27 @@
+
+@mixin geodis-fit-image ($width, $height) {
+  height: $height;
+  width: $width;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Fit image with a ratio constraint.
+// This mixin shall be applied on an image container.
+@mixin geodis-fit-ratio-image($width, $ratio) {
+  position: relative;
+  width: $width;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100% / $ratio;
+  }
+
+  img {
+    @include geodis-fit-image (100%, 100%);
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+}
