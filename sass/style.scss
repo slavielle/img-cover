@@ -1,4 +1,5 @@
 @import "img-cover";
+@import "img-cover-customize";
 @import "cover-using-object-fit";
 
 $color-dark-grey: rgba(37, 36, 50, 0.7);
@@ -61,7 +62,21 @@ h3{
   margin-top:$gutter;
 }
 
+.col-23 {
+  box-sizing: border-box;
+  width: 38% * 2 + $gutter;
+  margin-left:$gutter;
+  margin-top:$gutter;
+}
+pre {
+  font-size:.8em;
+  em{
+    font-weight: bold;
+    font-size:1.2em;
+  }
+}
 .img-cover-1 {
+  float:left;
   @include geodis-fit-image(100%, 300px);
 }
 
@@ -81,7 +96,12 @@ h3{
 .original-image{
   width:50%;
 }
+
 .img-cover-fx-example {
-  display:block;
+  @include geodis-fit-ratio-image(20rem, 3/4);
+}
+
+.img-cover-contain-example {
+  outline:1px solid lightgrey;
   @include geodis-fit-ratio-image(20rem, 3/4);
 }

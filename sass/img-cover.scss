@@ -10,7 +10,7 @@
   }
 }
 
-//Global cover style
+// Global cover style
 .img-cover {
   background-size: cover;
   background-position: center;
@@ -48,31 +48,17 @@
   }
 }
 
-// Following are extra stuff...
-.img-cover {
+// Modifier allowing to apply contain behavior to image
+.img-cover--contain {
+  background-size: contain;
+  background-position: center;
   .img-cover__inner {
-    transition: opacity 1s ease-in-out,
-    margin .3s cubic-bezier(0, 1.9, .75, .18),
-    width .3s cubic-bezier(0, 1.9, .75, .18),
-    height .3s cubic-bezier(0, 1.9, .75, .18);
-  }
-
-  // Effect : zoom on hover
-  &.img-cover--fx-load-fadein .img-cover__inner {
-    opacity: 0;
-  }
-  &.img-cover--fx-load-fadein .img-cover__inner[style] {
-    opacity: 1;
-  }
-
-  // Effect : zoom on hover
-  &:hover.img-cover--fx-hover-zoom .img-cover__inner {
-    width: calc(100% + 2rem);
-    height: calc(100% + 2rem);
-    margin-left: -1rem;
-    margin-top: -1rem;
+    background-size: contain;
+    background-position: center;
   }
 }
+
+
 
 
 

@@ -32,9 +32,24 @@
         <img class="img-cover-1" src="images/img_01.jpg">
     </div>
     <div class="col-3">
-        <div class="img-cover-1-b img-cover img-cover--hover-zoom-effect">
+        <div class="img-cover-1-b img-cover">
             <img src="images/img_01.jpg">
         </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-1 col-padding"></div>
+    <div class="col-23">
+        <pre>img-cover.scss +
+custom scss :
+    .img-cover-1-b {
+      width: 100%;
+      height: 300px;
+    }
+<em>html:</em>
+    &lt;div class="img-cover-1-b img-cover"&gt;
+      &lt;img src="images/img_01.jpg"&gt;
+    &lt;/div&gt;</pre>
     </div>
 </div>
 <div class="row">
@@ -52,7 +67,20 @@
         </div>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-1 col-padding"></div>
+    <div class="col-23">
+        <pre>img-cover.scss +
+custom scss :
+    .img-cover-2-b {
+      @include img-cover-fit-ratio(100%, 3/4);
+    }
+<em>html:</em>
+    &lt;div class="img-cover-2-b img-cover"&gt;
+      &lt;img src="images/img_01.jpg"&gt;
+    &lt;/div&gt;</pre>
+    </div>
+</div>
 <h2>Advanced stuff</h2>
 <p>Image-cover workaround allows to be easily impoved with some cool stuff</p>
 <div>
@@ -66,6 +94,29 @@
                 <img data-src="images/img_01.jpg">
             </div>
         </div>
+<pre><em>html:</em>
+&lt;div class="img-cover-fx-example img-cover img-cover--fx-load-fadein"&gt;
+    &lt;div class="img-cover__inner"&gt;
+        &lt;img data-src="images/img_01.jpg"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+<em>scss:</em>
+  img-cover.scss + custom scss:
+    .img-cover-fx-example {
+      @include geodis-fit-ratio-image(20rem, 3/4);
+    }
+    .img-cover {
+      .img-cover__inner {
+        transition: opacity 1s ease-in-out;
+      }
+      &.img-cover--fx-load-fadein .img-cover__inner {
+        opacity: 0;
+      }
+      &.img-cover--fx-load-fadein .img-cover__inner[style] {
+        opacity: 1;
+      }
+    }
+        </pre>
     </div>
 
     <h3>Hover effect</h3>
@@ -76,6 +127,31 @@
                 <img data-src="images/img_01.jpg">
             </div>
         </div>
+<pre><em>html:</em>
+&lt;div class="img-cover-fx-example img-cover img-cover--fx-hover-zoom"&gt;
+    &lt;div class="img-cover__inner"&gt;
+        &lt;img data-src="images/img_01.jpg"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+<em>scss:</em>
+  img-cover.scss + custom scss:
+    .img-cover-fx-example {
+      @include geodis-fit-ratio-image(20rem, 3/4);
+    }
+    .img-cover {
+      .img-cover__inner {
+        margin .3s cubic-bezier(0, 1.9, .75, .18),
+        width .3s cubic-bezier(0, 1.9, .75, .18),
+        height .3s cubic-bezier(0, 1.9, .75, .18);
+      }
+      &:hover.img-cover--fx-hover-zoom .img-cover__inner {
+        width: calc(100% + 2rem);
+        height: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-top: -1rem;
+      }
+    }
+        </pre>
     </div>
 
     <h3>With text</h3>
@@ -90,6 +166,21 @@
                 <p>What a great moment</p>
             </div>
         </div>
+<pre><em>html:</em>
+&lt;div class="img-cover-fx-example img-cover"&gt;
+    &lt;div class="img-cover__inner"&gt;
+        &lt;img data-src="images/img_01.jpg"&gt;
+    &lt;/div&gt;
+    &lt;div class="img-cover__content"&gt;
+        &lt;h2&gt;Hollidays ...&lt;/h2&gt;
+        &lt;p&gt;What a great moment&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+<em>scss:</em>
+  img-cover.scss + custom scss:
+    .img-cover-fx-example {
+      @include geodis-fit-ratio-image(20rem, 3/4);
+    }</pre>
     </div>
 
     <h3>All together</h3>
@@ -102,6 +193,51 @@
             <div class="img-cover__content">
                 <h2>Hollidays ...</h2>
                 <p>What a great moment</p>
+            </div>
+        </div>
+<pre><em>html:</em>
+&lt;div class="img-cover-fx-example img-cover img-cover--fx-hover-zoom img-cover--fx-load-fadein"&gt;
+    &lt;div class="img-cover__inner"&gt;
+        &lt;img data-src="images/img_01.jpg"&gt;
+    &lt;/div&gt;
+    &lt;div class="img-cover__content"&gt;
+        &lt;h2&gt;Hollidays ...&lt;/h2&gt;
+        &lt;p&gt;What a great moment&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+<em>scss:</em>
+  img-cover.scss + custom scss:
+    .img-cover {
+      .img-cover__inner {
+        transition: opacity 1s ease-in-out,
+          margin .3s cubic-bezier(0, 1.9, .75, .18),
+          width .3s cubic-bezier(0, 1.9, .75, .18),
+          height .3s cubic-bezier(0, 1.9, .75, .18);
+      }
+
+      // Effect : zoom on hover
+      &.img-cover--fx-load-fadein .img-cover__inner {
+        opacity: 0;
+      }
+      &.img-cover--fx-load-fadein .img-cover__inner[style] {
+        opacity: 1;
+      }
+
+      // Effect : zoom on hover
+      &:hover.img-cover--fx-hover-zoom .img-cover__inner {
+        width: calc(100% + 2rem);
+        height: calc(100% + 2rem);
+        margin-left: -1rem;
+        margin-top: -1rem;
+      }
+    }</pre>
+    </div>
+    <h3>Contain sized</h3>
+    <p>Image is sized to fit completely in .img-cover element</p>
+    <div>
+        <div class="img-cover img-cover-contain-example img-cover--contain">
+            <div class="img-cover__inner">
+                <img data-src="images/img_01.jpg">
             </div>
         </div>
     </div>
