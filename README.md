@@ -13,7 +13,7 @@ As a bonus, it can be nicely coupled with image lazy-loading or other effects.
 
 Test it by: 
 * cloning this repository
-
 * install dependencies using ``nmp i``
-
+* install gulp-cli globally ``nmp i gulp-cli -g``
+* run ``gulp`` from this repository dir
 * open [example.html](example.html) in your favorite browser
