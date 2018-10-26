@@ -11,9 +11,10 @@ or javascript can nicely replace object-fit usage.
 
 As a bonus, it can be nicely coupled with image lazy-loading or other effects.
 
-Test it by: 
+Test it: 
+* get [nodejs](https://nodejs.org)
 * cloning this repository
-* install dependencies using ``nmp i``
-* install gulp-cli globally ``nmp i gulp-cli -g``
+* install dependencies using ``npm i``
+* install gulp-cli globally ``npm i gulp-cli -g``
 * run ``gulp`` from this repository dir
 * open [example.html](example.html) in your favorite browser
